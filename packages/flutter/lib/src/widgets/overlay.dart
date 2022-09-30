@@ -150,6 +150,11 @@ class OverlayEntry implements Listenable {
   OverlayState? _overlay;
   final GlobalKey<_OverlayEntryWidgetState> _key = GlobalKey<_OverlayEntryWidgetState>();
 
+  /// Whether the [OverlayEntry] was inserted into an [OverlayState].
+  ///
+  /// This is often used to make sure [OverlayEntry].remove() called once.
+  bool get hasOverlay => _overlay != null;
+
   /// Remove this entry from the overlay.
   ///
   /// This should only be called once.
